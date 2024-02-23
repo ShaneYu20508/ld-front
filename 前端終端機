@@ -1,0 +1,25 @@
+npm i -D pug sass @vue/eslint-config-standard @vue/language-plugin-pug eslint-plugin-vue-pug
+如果沒有要用 pug 語法的話部分套件可以不裝
+
+npm i [
+yup (物件的資料格式驗證)
+vee-validate (vue 的表單驗證工具)
+validator (信箱及其他驗證)
+; yup 以及 validator 的驗證方式不同，因此 email 的驗證方式要自己寫
+]
+
+npm i [
+  axios (發送請求)
+  vuetify-use-dialog (彈出通知)
+]
+
+npm i pinia-plugin-persistedstate (把資料保存在 localstore 裡面，能保持登入狀態)
+  在 store 資料夾內的 index.js 內設定
+
+npm i -D vite-plugin-vue-devtools (vue開發工具)
+  在 vite.config 檔案內
+  引用 import VueDevTools from 'vite-plugin-vue-devtools'
+  並在 plugins 內新增 VueDevTools()
+
+npm i @boindil/vue-file-agent-next(上傳檢視美化)
+  @boindil 為作者的名字

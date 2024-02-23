@@ -1,0 +1,44 @@
+layouts資料夾內的 FrontLayout.vue 指的是前端顯示頁面
+
+router 資料夾新增 index.js
+設定各個不同的路徑
+
+在 views 資料夾內新增的檔案為要增加的各個頁面以及功能
+; 類似 iframe
+HomeView.vue 首頁
+LoginView.vue 登入頁
+RegisterView.vue 註冊頁
+
+在前端資料夾內新增 .env 檔
+
+在 plugins 資料夾內新增 axios.js 的檔案
+
+plugins 資料夾內的 index.js 加上
+  import VuetifyUseDialog from 'vuetify-use-dialog'
+  .use(VuetifyUseDialog)
+
+在 src 資料夾內新增 composables 資料夾(組合式語法)
+  新增 axios.js 檔案
+  並且把 plugins 資料夾內的 axios.js 檔案刪除
+
+
+在註冊和登入頁引入
+import { useApi } from '@/composables/axios'
+const { api } = useApi()
+並且把 import { api } from '@/plugins/axios' 刪除
+
+將 store 的 app.js 改名為 user.js (儲存使用者資料)
+
+將後端的 enums(使用者權限) 資料夾複製過來
+
+在 views 資料夾內新增 admin(管理員) 資料夾
+  新增 HomeView.vue(管理員前端) 檔案
+  新增 ProductsView.vue(產品管理) 檔案
+  新增 OrdersView.vue(訂單管理) 檔案
+
+在 plugins 資料夾內的 index.js 檔案內
+; 先在終端機下載  
+(上傳檢視美化)
+  import VueFileAgentNext from '@boindil/vue-file-agent-next'
+  import '@boindil/vue-file-agent-next/dist/vue-file-agent-next.css'
+  .use(VueFileAgentNext)
