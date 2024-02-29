@@ -2,7 +2,7 @@
   <v-row id="home" class="bg-c1">
     <v-col class="d-none d-sm-none d-md-flex pa-0">
       <v-main class="d-flex pa-0">
-        <v-img id="big-pic" src="../../../imgs/detective.jfif"></v-img>
+        <!-- <v-img id="big-pic" src="../../../imgs/detective.jfif"></v-img> -->
         <v-img id="sm-pic01" src="../../../imgs/sm-pic01.jpg"></v-img>
         <v-img id="sm-pic02" src="../../../imgs/sm-pic02.jpg"></v-img>
       </v-main>
