@@ -1,12 +1,10 @@
+// Utilities
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import UserRole from '@/enums/UserRole'
 import { useApi } from '@/composables/axios'
 
-// 保存使用者資訊
 export const useUserStore = defineStore('user', () => {
-// export const useAppStore = defineStore('app', () => {
-  // 檔案名更改因此這裡也要改
   const { apiAuth } = useApi()
 
   const token = ref('')
@@ -15,7 +13,6 @@ export const useUserStore = defineStore('user', () => {
   const cart = ref(0)
   const role = ref(UserRole.USER)
 
-  // 將後端傳過來的資料存入 ref 內(保存資訊)
   const login = (data) => {
     if (data.token) {
       token.value = data.token
@@ -26,16 +23,14 @@ export const useUserStore = defineStore('user', () => {
     role.value = data.role
   }
 
-  // 判斷是否為登入狀態
   const isLogin = computed(() => {
     return token.value.length > 0
   })
-  // 判斷是否為管理員
+
   const isAdmin = computed(() => {
     return role.value === UserRole.ADMIN
   })
 
-  // 判斷是否為郵差
   const isMailman = computed(() => {
     return role.value === UserRole.MAILMAN
   })
@@ -73,9 +68,8 @@ export const useUserStore = defineStore('user', () => {
     getProfile
   }
 }, {
-  // 保存使用者資料
   persist: {
-    key: 'lifedelivery',
+    key: '20240103',
     paths: ['token']
   }
 })
