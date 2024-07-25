@@ -126,15 +126,25 @@ const routes = [
         }
       },
       {
-        path: 'orders',
-        name: 'AdminOrders',
-        component: () => import('@/views/admin/OrdersView.vue'),
+        path: 'missionlist',
+        name: 'MissionList',
+        component: () => import('@/views/admin/MissionList.vue'),
         meta: {
-          title: 'Life Delivery | 訂單管理',
+          title: 'Life Delivery | 任務管理',
           login: true,
           admin: true
         }
       }
+      // {
+      //   path: 'orders',
+      //   name: 'AdminOrders',
+      //   component: () => import('@/views/admin/OrdersView.vue'),
+      //   meta: {
+      //     title: 'Life Delivery | 訂單管理',
+      //     login: true,
+      //     admin: true
+      //   }
+      // }
     ]
   }
 ]

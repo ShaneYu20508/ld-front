@@ -1,4 +1,4 @@
-<template lang="pug">
+<!-- <template lang="pug">
 VContainer
   VRow
     VCol(cols="12")
@@ -55,4 +55,4 @@ onMounted(async () => {
     })
   }
 })
-</script>
+</script> -->
