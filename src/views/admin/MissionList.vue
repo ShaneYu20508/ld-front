@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1 class='text-center'>商品管理</h1>
+        <h1 class='text-center'>任務管理</h1>
       </v-col>
       <v-divider><!-- 分隔線  --></v-divider>
       <v-col cols="12">
@@ -45,53 +45,27 @@
           </template>
           <template #[`item.edit`]="{item}">
             <v-btn
-              icon="mdi-pencil"
+              icon="mdi-delete"
               variant="text"
-              color="gray"
-              @click="openDialog(item)"></v-btn>
+              color="red"
+              @click=""></v-btn>
           </template>
         </v-data-table-server>
       </v-col>
     </v-row>
   </v-container>
   <v-dialog v-model="dialog" persistent width="500px">
-  <v-form :disabled="isSubmitting" @submit.prevent="submit">
-    <v-card>
-      <v-card-title> {{dialogId === '' ? '新增任務' : '編輯任務'}}</v-card-title>
-      <v-card-text>
-        <v-text-field
-          label="任務標題"
-          v-model="title.value.value"
-          :error-messages="title.errorMessage.value"></v-text-field>
-        <v-text-field
-          label="報酬/m"
-          type="number" min="1"
-          v-model="reward.value.value"
-          :error-messages="reward.errorMessage.value"></v-text-field>
-        <v-text-field
-          label="需求人數"
-          type="number" min="1"
-          v-model="requiredPeople.value.value"
-          :error-messages="requiredPeople.errorMessage.value"></v-text-field>
-        <v-checkbox
-          label="私人"
-          v-model="isPublic.value.value"
-          :error-messages="isPublic.errorMessage.value"
-          ></v-checkbox>
-        <v-textarea
-          label="任務內容"
-          v-model="description.value.value"
-          :error-messages="description.errorMessage.value"
-          ></v-textarea>
-      </v-card-text>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="red" :disabled="isSubmitting" @click="closeDialog">取消</v-btn>
-        <v-btn color="green" type="submit" :loading="isSubmitting">送出</v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-form>
-</v-dialog>
+    <v-form :disabled="isSubmitting" @submit.prevent="submit">
+      <v-card>
+        <v-card-title> 確認刪除任務</v-card-title>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="red" :disabled="isSubmitting" @click="closeDialog">取消</v-btn>
+          <v-btn color="green" type="submit" :loading="isSubmitting">確認</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-form>
+  </v-dialog>
 </template>
 
 <script setup>
@@ -252,12 +226,11 @@ const tablemissions = ref([1])
 // sortable 為是否能依據該項目排序
 const tableHeaders = [
   { title: '圖片', align: 'center', sortable: false, key: 'image' },
-  { title: '名稱', align: 'center', sortable: true, key: 'name' },
-  { title: '價格', align: 'center', sortable: true, key: 'price' },
-  // { title: '說明', align: 'center', sortable: true, key: 'description' }
-  { title: '分類', align: 'center', sortable: true, key: 'category' },
-  { title: '是否上架', align: 'center', sortable: true, key: 'sell' },
-  { title: '編輯', align: 'center', sortable: false, key: 'edit' }
+  { title: '任務標題', align: 'left', sortable: true, key: 'title' },
+  { title: '任務報酬/m', align: 'left', sortable: true, key: 'reward' },
+  { title: '任務狀態', align: 'left', sortable: true, key: 'status' },
+  { title: '任務說明', align: 'left', sortable: true, key: 'description' },
+  { title: '編輯', align: 'left', sortable: false, key: 'edit' }
 ]
 // 表格載入狀態
 const tableLoading = ref(true)
