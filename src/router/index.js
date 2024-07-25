@@ -110,7 +110,7 @@ const routes = [
         name: 'AdminHome',
         component: () => import('@/views/admin/HomeView.vue'),
         meta: {
-          title: '購物網 | 管理',
+          title: 'Life Delivery | 管理員',
           login: true,
           admin: true
         }
@@ -130,7 +130,7 @@ const routes = [
         name: 'AdminOrders',
         component: () => import('@/views/admin/OrdersView.vue'),
         meta: {
-          title: '購物網 | 訂單管理',
+          title: 'Life Delivery | 訂單管理',
           login: true,
           admin: true
         }
